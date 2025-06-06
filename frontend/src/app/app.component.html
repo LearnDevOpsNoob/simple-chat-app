@@ -1,0 +1,18 @@
+<h1>{{ title }}</h1>
+<div class="p-4 max-w-xl mx-auto">
+      <h2 class="text-xl font-bold mb-2">Simple Chat Room</h2>
+
+      <input [(ngModel)]="room" placeholder="Room name" class="border p-2 mr-2" />
+      <button (click)="joinRoom()" class="bg-blue-500 text-white px-3 py-1">Join Room</button>
+
+      <div class="mt-4">
+        <input [(ngModel)]="message" placeholder="Type a message" class="border p-2 w-full" />
+        <button (click)="sendMessage()" class="bg-green-500 text-white px-3 py-1 mt-1">Send</button>
+      </div>
+
+      <div class="mt-4 border-t pt-2">
+        <div *ngFor="let msg of messages">
+          <strong>{{ msg.sender }}:</strong> {{ msg.message }}
+        </div>
+      </div>
+    </div>
